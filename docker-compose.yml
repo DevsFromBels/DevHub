@@ -1,0 +1,26 @@
+version: '3'
+services:
+  # backend:
+  #   build:
+  #     context: .
+  #     dockerfile: dev-hub-backend/Dockerfile
+  #   ports:
+  #     - "7777:3000"
+  #   depends_on:
+  #     - database
+
+  # frontend:
+  #   build:
+  #     context: .
+  #     dockerfile: dev-hub-frontend/Dockerfile
+  #   ports:
+  #     - "80:80"
+
+  database:
+    image: postgres
+    environment:
+      POSTGRES_DB: devhub
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: devhub123
+    ports:
+      - "5433:5432"
